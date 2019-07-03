@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Patrick Geschinski">
+  <title>Serverless</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://revealjs.com/css/reset.css">
+  <link rel="stylesheet" href="https://revealjs.com/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="https://revealjs.com/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://revealjs.com/css/print/pdf.css' : 'https://revealjs.com/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://revealjs.com/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Serverless</h1>
+  <p class="author">Patrick Geschinski</p>
+  <p class="date">Juli 02, 2019</p>
+</section>
+
+<section id="serverless-ein-überblick" class="slide level2">
+<h2>Serverless ein Überblick</h2>
+</section>
+<section id="evolution" class="slide level2">
+<h2>Evolution</h2>
+<figure>
+<img data-src="https://cdn-images-1.medium.com/max/2042/1*VD9n01kVn4hqOhyzY9X41w.png" alt="" /><figcaption>Microservice Evolution</figcaption>
+</figure>
+<p><sub><sup>*Bild Quelle: https://serverless.zone/abstracting-the-back-end-with-faas-e5e80e837362</sup></sub></p>
+</section>
+<section id="vorteile-serverless" class="slide level2">
+<h2>Vorteile Serverless</h2>
+<ul>
+<li><p>Skalierung</p></li>
+<li><p>Schnelle Bereitstellung der Funktion (Sekunden)</p></li>
+<li><p>Pay per Use</p></li>
+<li><p>Konzentration auf den eigentlichen Business Value</p></li>
+</ul>
+</section>
+<section id="nachteile" class="slide level2">
+<h2>Nachteile</h2>
+<ul>
+<li><p>Vendor Lock-in</p></li>
+<li><p>hohe Komplexität bei sehr vielen Funktionen</p></li>
+</ul>
+</section>
+<section id="use-cases---web-events" class="slide level2">
+<h2>Use Cases - Web Events</h2>
+<ul>
+<li><p>Backend services (Formulare verarbeiten, In die Datenbank schreiben, Externe APIs abfragen)</p></li>
+<li><p>Digitale-Assistenten Services (Google Home, Alexa skills)</p></li>
+<li><p>Automatisierung in CI/CD Pipelines</p></li>
+<li><p>Data Processing</p></li>
+</ul>
+</section>
+<section id="use-cases---event-based" class="slide level2">
+<h2>Use Cases - Event Based</h2>
+<ul>
+<li><p>Event-basierte Integration (Web Request, Neue Datei wurde abgelegt, Neue Exception ist aufgetreten)</p></li>
+<li><p>Datei Verarbeitung (Bilder und Videos)</p></li>
+<li><p>Verarbeiten von komplexen Events (Monitoring, notifications und alerting)</p></li>
+</ul>
+</section>
+<section id="provider" class="slide level2">
+<h2>Provider</h2>
+<ul>
+<li>AWS Lambda</li>
+<li>Google Cloud Functions</li>
+<li>Microsoft Functions</li>
+<li>IBM Openwhisk</li>
+<li>KNative</li>
+</ul>
+</section>
+<section id="herausforderungen" class="slide level2">
+<h2>Herausforderungen</h2>
+<ul>
+<li>Kaltstart</li>
+<li>Authentifizierung</li>
+<li>Integrations Tests</li>
+<li>Function Discovery</li>
+</ul>
+</section>
+<section id="architektur" class="slide level2">
+<h2>Architektur</h2>
+<figure>
+<img data-src="functions.png" alt="" /><figcaption>Api Gateway</figcaption>
+</figure>
+<p><sub><sup>*Bild Quelle: https://softwareengineeringdaily.com/2016/08/23/serverless-architecture-with-mike-roberts//sup&gt;</sub></p>
+</section>
+<section id="api-gateway" class="slide level2">
+<h2>Api Gateway</h2>
+<ul>
+<li><p>Vereinheitlichter API Zugang für Microservices</p></li>
+<li><p>DDoS Schutz und Throttling von Anfragen</p></li>
+<li><p>Authentifizierung und Autorisierung</p></li>
+<li><p>Pay per Use Geschäftsmodelle</p></li>
+</ul>
+</section>
+<section id="serverless-cli" class="slide level2">
+<h2>serverless cli</h2>
+<ul>
+<li>abstrahiert das Deployment von Funktionen für aws lambda, azure functions, open whisk, google functions usw.</li>
+</ul>
+</section>
+<section id="serverless-installieren" class="slide level2">
+<h2>serverless installieren</h2>
+<ul>
+<li><p>https://serverless.com/framework/docs/getting-started/</p></li>
+<li><p>https://serverless.com/framework/docs/providers/aws/guide/quick-start/</p></li>
+<li><p>https://serverless.com/framework/docs/providers/aws/events/apigateway/</p></li>
+</ul>
+</section>
+<section id="links" class="slide level2">
+<h2>links</h2>
+<ul>
+<li><p>https://martinfowler.com/articles/serverless.html</p></li>
+<li><p>https://itnext.io/build-a-restful-api-using-aws-lambda-api-gateway-dynamodb-and-the-serverless-framework-30fc68e08a42</p></li>
+<li><p>https://aws.amazon.com/de/serverless/sam/</p></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://revealjs.com/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://revealjs.com/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://revealjs.com/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://revealjs.com/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

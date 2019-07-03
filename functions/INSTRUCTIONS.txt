@@ -1,0 +1,30 @@
+# serverless für AWS konfigurieren
+
+sls config credentials -p aws -k KEY -s SECRET
+
+# Anlegen einer neuen Funktion
+
+serverless create --template aws-nodejs --path scc &&s
+cd scc
+
+# Deployment der Funktion
+
+serverless deploy -v
+serverless invoke -f hello -l
+serverless package
+
+# Aufrufen einer Funktion
+
+serverless invoke -f hello -l
+
+# Api Gateway initialisieren
+
+- https://serverless.com/framework/docs/providers/aws/events/apigateway/
+
+# neu deployen
+
+serverless deploy -v
+
+# funktion für ci/cd pipeline paketieren
+
+serverless package
